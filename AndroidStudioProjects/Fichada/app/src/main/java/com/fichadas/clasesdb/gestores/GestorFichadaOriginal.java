@@ -11,6 +11,8 @@ import com.fichadas.clasesdb.basecolums.bcFichadaOriginal;
 import com.fichadas.fichada.R;
 import com.fichadas.utils.UtilsFechaHora;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -273,7 +275,24 @@ public class GestorFichadaOriginal  {
         Date poi= UtilsFechaHora.Num1DiaSemanaAno(Ano, Semana);
 
         String fecha1="";
-        String fecha2="";       // ARREGLAR***************************************************************************************************
+        String fecha2="";
+
+        String CadIni = " 00:00:00";
+        String CadFin = " 23:59:59";
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+
+
+        try {
+
+            fecha1 = formato.format( poi );
+            fecha2 = formato.format( UtilsFechaHora.sumarRestarDiasFecha(poi ,6));
+
+        } catch (Exception e){
+            return null;
+        }
+
+        fecha1 = fecha1+CadIni;
+        fecha2 = fecha2+CadFin;
 
         ArrayList<FichadaOriginal> lista = null;
         Cursor cursor = db.rawQuery("Select * from "+Tablas.TABLA_FICHADAS_ORIGINAL+" where fechahora >= '"+fecha1+"' and fechahora <= '"+fecha2+"';" , null );
