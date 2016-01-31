@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Fichada</string>
+
+    <string name="navigation_drawer_open">Abrir navigación</string>
+    <string name="navigation_drawer_close">Cerrar navegacion</string>
+
+    <string name="action_settings">Configuración</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">prueba</string>
+    <string name="pick_date">Fecha</string>
+    <string name="pick_time">Hora</string>
+
+
+    <string name="titulo_actividad_detalle">Actividad De Detalle</string>
+    <string name="nombre_transicion_imagen">imagen_compartida</string>
+</resources>
